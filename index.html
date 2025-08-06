@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horizontal Scroll Image Gallery</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+       <div class="gallery-wrap">
+        <img src="pink-circle-play-button-right-arrow-pointer-realistic-3d-icon-forward-begin-badge_92753-8376 Background Removed.png" id="backBtn">
+          <div class="gallery">
+        <div>
+            <span><img src="IMG_9119.jpeg"></span>
+             <span><img src="IMG_6104.jpg"></span>
+               <span><img src="IMG_6061_Original.jpeg"></span>
+        </div>
+
+        <div>
+            <span><img src="7901c637-f2a6-4b94-b97d-b98a90dbd916.JPG"></span>
+             <span><img src="IMG_0942.jpeg"></span>
+               <span><img src="IMG_4795.jpg"></span>
+        </div>
+    </div>
+        <img src="pink-circle-play-button-right-arrow-pointer-realistic-3d-icon-forward-begin-badge_92753-8376 Background Removed copy.png" id="nextBtn">
+       </div>
+  
+   <script>
+    let scrollContainer = document.querySelector(".gallery");
+    let backBtn = document.getElementById("backBtn");
+    let nextBtn = document.getElementById("nextBtn");
+
+    scrollContainer.addEventListener("wheel", (evt) => {
+        evt.preventDefault();
+        scrollContainer.scrollLeft += evt.deltaY;
+        scrollContainer.style.scrollBehavior = "auto";
+    });
+
+    nextBtn.addEventListener("click", ()=>{
+        scrollContainer.style.scrollBehavior = "smooth";
+        scrollContainer.scrollLeft += 900;
+    });
+
+    backBtn.addEventListener("click", ()=>{
+        scrollContainer.style.scrollBehavior = "smooth";
+        scrollContainer.scrollLeft -= 900;
+    });
+   </script>
+    
+</body>
+</html>
